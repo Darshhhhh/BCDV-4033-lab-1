@@ -1,0 +1,29 @@
+name: NPM Project Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  npm-project:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Jest Tests
+        run: npm test
+
+      - name: Create Artifact
+        run: npm run build
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: npm-project-artifact
+          path: dist
