@@ -4,7 +4,8 @@
   "description": "",
   "main": "simpleCalc.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "npm run build"
   },
   "dependencies": {
     "jest": "^29.5.0",
