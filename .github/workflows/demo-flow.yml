@@ -6,15 +6,20 @@ on:
       - main
 
 jobs:
-  npm-project:
+  npm_project:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
 
       - name: Install Dependencies
-        run: npm install -f
+        run: npm ci
 
       - name: Run Jest Tests
         run: npm test
