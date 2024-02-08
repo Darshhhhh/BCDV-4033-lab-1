@@ -18,9 +18,6 @@ jobs:
         with:
           node-version: 18
         
-      - name: Change Directory
-        run: cd demo
-
       - name: Install Dependencies
         run: npm install
 
