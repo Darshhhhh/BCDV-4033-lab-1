@@ -1,34 +1,37 @@
-name: NPM Project Workflow
+name: Build, Run Unit Tests, and Upload Artifact
 
 on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  npm_project:
+  build-test-and-upload:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 18
-        
-      - name: Install Dependencies
-        run: npm install
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '14'
 
-      - name: Run Jest Tests
-        run: npm test
+    - name: Install dependencies
+      run: npm install
 
-      - name: Create Artifact
-        run: npm run build
+    - name: Run build
+      run: npm run build
 
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: npm-project-artifact
-          path: dist
+    - name: Run unit tests
+      run: npm test
+
+    - name: Archive build artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: dist
+        path: dist
