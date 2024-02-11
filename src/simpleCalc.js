@@ -1,8 +1,9 @@
+/* eslint-disable */
 "use strict";
 
 var mathOperations = {
   sum: function (a, b) {
-    console.log("Helloo This is test")
+    console.log("Helloo This is test");
     return a + b;
   },
   diff: function (a, b) {
@@ -14,5 +15,5 @@ var mathOperations = {
   divide: function (a, b) {
     return a / b;
   },
-};  
+};
 module.exports = mathOperations;

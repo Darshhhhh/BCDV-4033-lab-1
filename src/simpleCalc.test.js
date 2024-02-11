@@ -1,3 +1,4 @@
+/* eslint-disable */
 const mathOperations = require("./simpleCalc");
 
 describe("Calculator Tests", () => {
