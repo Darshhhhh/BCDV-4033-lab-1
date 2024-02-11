@@ -3,7 +3,6 @@
 
 var mathOperations = {
   sum: function (a, b) {
-    console.log("Helloo This is test");
     return a + b;
   },
   diff: function (a, b) {
