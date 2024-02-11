@@ -1,4 +1,4 @@
-name: Get Secret
+name: GET API KEY
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  get-secret-key:
+  your-job-name:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,3 +16,4 @@ jobs:
       - name: Set up environment variables
         run: |
           echo "SECRET_API_KEY=${{ secrets.DEMO_SECRET }}" >> $GITHUB_ENV
+
