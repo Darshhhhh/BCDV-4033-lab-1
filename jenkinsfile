@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the code from Git repo
+                // Checkout the code from Git
                 git branch: 'main', credentialsId: 'bdc76926-5619-49ef-b06e-62349bbf320b', url: 'https://github.com/Darshhhhh/BCDV-4033-lab-1'
             }
         }
