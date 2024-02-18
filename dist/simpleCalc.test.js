@@ -1,0 +1,36 @@
+/* eslint-disable */
+
+"use strict";
+
+/* eslint-disable */
+var mathOperations = require("./simpleCalc");
+describe("Calculator Tests", function () {
+  test("Addition of 2 numbers", function () {
+    // arrange and act
+    var result = mathOperations.sum(1, 2);
+
+    // assert
+    expect(result).toBe(3);
+  });
+  test("Subtraction of 2 numbers", function () {
+    // arrange and act
+    var result = mathOperations.diff(10, 2);
+
+    // assert
+    expect(result).toBe(8);
+  });
+  test("Multiplication of 2 numbers", function () {
+    // arrange and act
+    var result = mathOperations.product(2, 8);
+
+    // assert
+    expect(result).toBe(16); // Changed the expected result to 16
+  });
+  test("Division of 2 numbers", function () {
+    // arrange and act
+    var result = mathOperations.divide(24, 8);
+
+    // assert
+    expect(result).toBe(3);
+  });
+});
